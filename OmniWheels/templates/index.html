@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" rel="/static/styles.css"
+    <title>Color Tracker</title>
+</head>
+<body>
+    <h1>Color Tracker</h1>
+    <img src="/video_feed" width="640" height="480">
+    <div>
+        <button onclick="setColor('red')">Filter Red</button>
+        <button onclick="setColor('green')">Filter Green</button>
+        <button onclick="setColor('blue')">Filter Blue</button>
+    </div>
+    <script>
+        function setColor(color) {
+            fetch('/set_color', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ color: color })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(`Color set to: ${data.color}`);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
