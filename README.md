@@ -1,4 +1,7 @@
 # Color_Tracking_Robot
+
+![omniwheels (1)](https://github.com/user-attachments/assets/8d965aa5-2205-4309-a2f9-26e063069f02)
+
 Robot Omniwheels berbasis RaspberryPi 5 untuk tracking warna menggunakan Python
 
 https://github.com/user-attachments/assets/f5728c61-6e49-4537-b609-17ea997a08a0
